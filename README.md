@@ -32,7 +32,7 @@ SourceForge Username: Rondeau97
 1. Repository Name: androdi_kernel_motorola_sm8250
    Repository Description: kernel source for sm8250 board
 
-#Vendoor Trees:
+#Vendor Trees:
 !. Repository Name: proprietary_vendor_motorola_sm8250-common
    Repository Description: vendor blobs for the sm8250 board
 

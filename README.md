@@ -29,7 +29,7 @@ SourceForge Username: Rondeau97
    Repository Description: Common tree for sm8250-common device boards 
 
 # Kernel Source:
-1. Repository Name: androdi_kernel_motorola_sm8250
+1. Repository Name: android_kernel_motorola_sm8250
    Repository Description: kernel source for sm8250 board
 
 #Vendor Trees:

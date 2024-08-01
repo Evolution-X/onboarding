@@ -10,91 +10,82 @@ Please provide us with your [GitHub](https://github.com) and [SourceForge](https
 
 ***You MAY NOT substitute Evolution X recovery with TWRP or any of its derivatives (OFOX/PBRP):***
 
-**Example message using panther:**
+**Example message using Nio:**
 
 ```
 # Device:
-Device name: Google Pixel 7
-Device codename: panther
+Device name: Motorola G100/S+
+Device codename: Nio
 
 # Usernames:
-GitHub Username: AnierinBliss
-SourceForge Username: anierin
+GitHub Username: Rondeau79
+SourceForge Username: Rondeau97
 
 # Device Repositories:
-1. Repository Name: device_google_panther
-   Repository Description: Roomservice & scripts support
+1. Repository Name: android_device_motorola_nio
+   Repository Description: Specific device tree for Moto G100
 
-2. Repository Name: device_google_pantah
-   Repository Description: Device tree for the Google Pixel 7 & 7 Pro
+2. Repository Name: android_device_motorola-sm8250-common
+   Repository Description: Common tree for sm8250-common device boards 
 
-3. Repository Name: device_google_gs201
-   Repository Description: Board tree for Google Tensor G2 devices
+# Kernel Source:
+1. Repository Name: androdi_kernel_motorola_sm8250
+   Repository Description: kernel source for sm8250 board
 
-4. Repository Name: device_google_gs101
-   Repository Description: Board tree for Google Tensor G1 devices
+#Vendoor Trees:
+!. Repository Name: proprietary_vendor_motorola_sm8250-common
+   Repository Description: vendor blobs for the sm8250 board
 
-5. Repository Name: device_google_gs-common
-   Repository Description: Common interfaces & sepolicies for tensor-based Google Pixel devices
+5. Repository Name: proprietary_vendor_motorola_nio
+   Repository Description: specfic vendor blobs for Moto G100/S+
 
-6. Repository Name: packages_apps_PixelParts
-   Repository Description: Parts application for tensor-based Google Pixel devices
+Hardware support:
+6. Repository Name: android_hardware_motorola
+   Repository Description: source code for motorola proprietarty gestures
+
+7. Repository Name: android_system_qcom
+   Respository Description: dependency for android_hardware_motorola
 
 # Initial installation images (required to boot Evolution X recovery when coming from the stock ROM):
 1. boot
 2. dtbo
-3. vendor_kernel_boot
 4. vendor_boot
+   
 ```
 
-**Example evolution.dependencies roomservice chain using panther:**
+**Example evolution.dependencies roomservice chain using nio:**
 
-`device_google_panther`
+`device_motorola_nio`
 ```
 [
   {
-    "repository": "device_google_pantah",
-    "target_path": "device/google/pantah"
+    "repository": "device_motorola_sm8250-common",
+    "target_path": "device/motorola/sm8250-common"
   }
 ]
 ```
-`device_google_pantah`
+`device_motorola_sm8250-common`
 ```
 [
   {
-    "repository": "device_google_gs201",
-    "target_path": "device/google/gs201"
+    "repository": "kernel_motorola_sm8250",
+    "target_path": "kernel/motorola/sm8250"
   },
   {
-    "repository": "device/google/pantah-kernel",
-    "target_path": "device/google/pantah-kernel",
-    "remote": "aosp-pantah"
+    "repository": "hardware_motorola",
+    "target_path": "hardware/motorola"
   }
 ]
 ```
-`device_google_gs201`
+`hardware_motorola`
 ```
 [
   {
-    "repository": "device_google_gs101",
-    "target_path": "device/google/gs101"
+    "repository": "system_qcom",
+    "target_path": "system/qcom"
   }
 ]
 ```
-`device_google_gs101`
-```
-[
-  {
-    "repository": "device_google_gs-common",
-    "target_path": "device/google/gs-common"
-  },
-  {
-    "repository": "packages_apps_PixelParts",
-    "target_path": "packages/apps/PixelParts"
-  }
-]
-```
-
 ## Signed releases
 Maintainers are required to sign all releases with [our private keys](https://github.com/Evolution-XYZ/vendor_evolution-priv_keys). There are no manual signing steps required; just clone the repository to `$ANDROID_BUILD_TOP/vendor/evolution-priv/keys/` and compile. Releases not signed by these keys will be removed from sourceforge without warning.
 

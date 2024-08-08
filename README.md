@@ -14,7 +14,7 @@ Please provide us with your [GitHub](https://github.com) and [SourceForge](https
 
 ```
 # Device:
-Device name: Motorola G100/S+
+Device name: Motorola G100/Edge S
 Device codename: Nio
 
 # Usernames:
